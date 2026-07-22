@@ -1,135 +1,420 @@
-# Recipe Book Application - MERN Stack
+# 🍽️ Recipe Book - Full Stack MERN Application
 
-Live Site URL : [Recipe Book](https://flavor-verse.netlify.app/)
+A modern **Recipe Book Web Application** built using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)** that allows users to discover recipes, search recipes, view detailed cooking instructions, bookmark their favorite recipes, and manage their personal profile through secure authentication.
 
-This project is a full-stack web application built using React for the frontend and Express.js with MongoDB for the backend. The frontend uses various packages such as Formik, Yup, FontAwesome, and React-Axios to create a sign-up page with form validation and file upload, a home page with a search bar to fetch data from Spoonacular API, and a profile page that displays user details and saved recipes.
+The application integrates the **Spoonacular API** to fetch thousands of recipes while maintaining user authentication and saved recipes inside **MongoDB**.
 
-The backend uses packages such as bcrypt, body-parser, cors, helmet, jsonwebtoken, mongoose, and multer to handle user authentication, password encryption, and database operations. It checks whether the user exists before storing the user's information in the database and uses JSON web tokens for secure communication between the client and server.
+> 🚀 Future versions will support creating, editing, deleting, and sharing user-created recipes stored in MongoDB.
 
-The Redux store is used to store the user's details, saved recipes, and the authentication token. The state is also persisted using Redux persist to ensure that the user's details are saved even after refreshing the page.
+---
 
-The application also has a recipe detail page that displays information such as cooking time, instructions, summary, and ingredients for each recipe. Users can save recipes to their profile, and the application provides a way to search for recipes based on keywords.
+# 🌐 Live Demo
 
-To use the application, users must first sign up with their name, email, password, and profile picture. Once signed in, they can search for recipes, save their favorite recipes, and view their saved recipes on their profile page. The application also provides a logout button to ensure the user's privacy and security.
+**Frontend:** https://flavor-verse.netlify.app/
 
- 
-## Installation
+---
 
-To run this project, you'll need to have Node.js and MongoDB installed on your system. You can download Node.js from the official website: https://nodejs.org/, and install MongoDB by following the instructions provided here: https://docs.mongodb.com/manual/installation/.
+# 📖 Overview
 
-To install the project dependencies, follow these steps:
+Recipe Book is a full-stack recipe discovery platform where users can register, log in securely, browse recipes from the Spoonacular API, save favorite recipes, and access them anytime from their profile.
 
-Clone the repository to your local machine using the following command:
+The project demonstrates complete authentication, JWT authorization, Redux state management, MongoDB integration, REST APIs, API consumption, and responsive UI development.
 
-bash
-Copy code
-git clone https://github.com/your-name/your-project-name.git
-Navigate to the project directory:
+---
 
-bash
-Copy code
-```bash
-cd your-project
+# ✨ Features
+
+## Authentication
+
+- User Registration
+- User Login
+- JWT Authentication
+- Password Hashing using bcrypt
+- Persistent Login using Redux Persist
+- Logout functionality
+
+---
+
+## User Profile
+
+- Upload Profile Picture
+- View User Information
+- Personalized Profile Page
+- View Saved Recipes
+
+---
+
+## Recipe Features
+
+- Browse Random Recipes
+- Search Recipes
+- View Recipe Details
+- Cooking Time
+- Ingredients
+- Complete Instructions
+- Recipe Summary
+- Save/Bookmark Recipes
+- Remove Saved Recipes
+
+---
+
+## Responsive UI
+
+- Dark Theme
+- Mobile Friendly
+- Modern Card Layout
+- Responsive Search Bar
+- Interactive Recipe Details
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React.js
+- Redux Toolkit
+- Redux Persist
+- React Router DOM
+- Axios
+- Formik
+- Yup
+- SCSS
+- FontAwesome
+
+---
+
+## Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- bcrypt
+- Multer
+- Helmet
+- CORS
+- dotenv
+
+---
+
+## Database
+
+MongoDB Atlas
+
+---
+
+## External API
+
+Spoonacular API
+
+---
+
+# 📂 Project Structure
+
 ```
-Install the frontend dependencies:
+Recipe-Book
+│
+├── client
+│   ├── src
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── redux
+│   │   ├── assets
+│   │   ├── styles
+│   │   └── App.js
+│   │
+│   └── package.json
+│
+├── server
+│   ├── controllers
+│   ├── middleware
+│   ├── models
+│   ├── routes
+│   ├── uploads
+│   ├── index.js
+│   └── package.json
+│
+└── README.md
+```
+
+---
+
+# ⚙ Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/your-username/Recipe-Book.git
+```
+
+```bash
+cd Recipe-Book
+```
+
+---
+
+## Install Frontend
+
+```bash
+cd client
+```
+
 ```bash
 npm install
 ```
-Navigate to the backend directory:
+
+Create a `.env` file inside the **client** folder.
+
+```env
+REACT_APP_RECIPE_APP_API_KEY=YOUR_SPOONACULAR_API_KEY
+```
+
+> Replace `YOUR_SPOONACULAR_API_KEY` with your Spoonacular API key.
+
+Start the frontend
 
 ```bash
-cd backend
+npm start
 ```
-Install the backend dependencies:
+
+---
+
+## Install Backend
+
+Open another terminal
+
+```bash
+cd server
+```
+
+Install dependencies
 
 ```bash
 npm install
 ```
-Create a .env file in the backend directory, and set the following environment variables:
 
-makefile
-```bash
+Create a `.env` file inside the **server** folder.
+
+```env
 PORT=5000
-MONGODB_URI=<your-mongodb-uri>
-JWT_SECRET=<your-jwt-secret>
+MONGODB_URI=YOUR_MONGODB_URI
+JWT_SECRET=YOUR_SECRET_KEY
 ```
-Replace <your-mongodb-uri> with the URI of your MongoDB database, and <your-jwt-secret> with a secret key of your choice.
 
-Start the backend server:
+Start backend
 
 ```bash
 npm start
 ```
-Open a new terminal window, navigate to the project directory, and start the frontend server:
 
-```bash
-npm start
-```
-Open your web browser and navigate to http://localhost:3000 to view the application.
+---
 
-That's it! You should now be able to run the application locally. If you encounter any issues, please refer to the project documentation or create a new issue on the project's GitHub repository.
-    
-  
+# 🔐 Environment Variables
 
-## Deployment
+## Client (.env)
 
-
-Create a GitHub repository for your project.
-
-Push your code to the GitHub repository.
-
-Sign up for a Render account.
-
-Create a new web service on Render, and select "Custom" as the type.
-
-Fill in the required details such as the name of the service, the region, 
-the startup command 
-```bash
-npm start
+```env
+REACT_APP_RECIPE_APP_API_KEY=YOUR_SPOONACULAR_API_KEY
 ```
 
-the build command
-```bash
-npm install
+---
+
+## Server (.env)
+
+```env
+PORT=5000
+
+MONGODB_URI=YOUR_MONGODB_URI
+
+JWT_SECRET=YOUR_SECRET_KEY
 ```
-Under the Environment section, add the necessary environment variables such as the 
-```bash
-MongoDB URL
-port number
-JWT secret
+
+---
+
+# 🗄 Database Collections
+
+## Users
+
+Stores
+
+- Name
+- Email
+- Password (Encrypted)
+- Profile Picture
+
+---
+
+## Saved Recipes
+
+Stores
+
+- User ID
+- Saved Recipe IDs
+
+---
+
+# 🔑 Authentication Flow
+
+```
+Register
+      │
+      ▼
+Password Encryption
+      │
+      ▼
+MongoDB
+      │
+      ▼
+Login
+      │
+      ▼
+JWT Token
+      │
+      ▼
+Protected Routes
 ```
 
+---
 
-Click on the "Create Web Service" button to create your backend server.
+# 🔄 Application Workflow
 
-Once your backend server is live, update the frontend code with the new backend URL (the one provided by Render).
+```
+User
 
-Run npm run build in the client-side code to create a build folder.
+↓
 
-In the build folder, create a new file called _redirects and add the following line of code: /* /index.html 200.
+Register/Login
 
-Upload the build folder to a hosting service such as Netlify.
+↓
 
-Create a new live site link in Netlify and change the domain namer.
+JWT Authentication
 
-Your project should now be live and accessible via the new domain name.
+↓
 
-Make sure to test your application thoroughly after deployment to ensure that everything is working as expected.
+Search Recipes
 
-## Screenshots
-## Video
-https://github.com/prakash-s-2210/mern-recipe-book-app/assets/94909544/6ebb4392-f9f8-4d7f-9319-22fd571321e1
-## Register Page Screenshot
-![Register](https://github.com/prakash-s-2210/mern-recipe-book-app/assets/94909544/2bafd98e-56e2-45c2-9319-7bf1732e8a73)
-## Login Page Screenshot
- ![Login](https://github.com/prakash-s-2210/mern-recipe-book-app/assets/94909544/707a6cbd-494a-4e3b-b82e-04713477cca1)
+↓
 
-## Home Page Screenshot
-![home](https://github.com/prakash-s-2210/mern-recipe-book-app/assets/94909544/e5c88f6f-a5f1-4b57-8768-d18eb8bd45da)
-## Profile Page Screenshot
-![profile](https://github.com/prakash-s-2210/mern-recipe-book-app/assets/94909544/e522b101-bf15-4925-af76-7b0fcd72bc42)
+Spoonacular API
 
- ## Author
+↓
 
-- [Prakash S](https://www.linkedin.com/in/prakash2210/)
+Recipe Details
 
+↓
+
+Save Recipe
+
+↓
+
+MongoDB
+
+↓
+
+Profile Page
+```
+
+---
+
+# 📸 Screenshots
+
+## Register Page
+
+<img width="100%" src="screenshots/register.png"/>
+
+---
+
+## Login Page
+
+<img width="100%" src="screenshots/login.png"/>
+
+---
+
+## Home Page
+
+<img width="100%" src="screenshots/home.png"/>
+
+---
+
+## Recipe Detail
+
+<img width="100%" src="screenshots/details.png"/>
+
+---
+
+## Ingredients
+
+<img width="100%" src="screenshots/ingredients.png"/>
+
+---
+
+## Profile Page
+
+<img width="100%" src="screenshots/profile.png"/>
+
+---
+
+# 🚀 Upcoming Features
+
+The following features are planned for future releases:
+
+### Community Recipes
+
+- Create New Recipe
+- Edit Own Recipe
+- Delete Own Recipe
+- Store User Recipes in MongoDB
+- Upload Recipe Images
+- Rich Text Recipe Instructions
+
+---
+
+### Social Features
+
+- Like Recipes
+- Recipe Ratings
+- Comments
+- Share Recipes
+- Follow Favorite Chefs
+- User Recipe Feed
+
+---
+
+### Search & Discovery
+
+- Filter by Category
+- Filter by Cuisine
+- Vegetarian / Vegan Filters
+- Cooking Time Filters
+- Difficulty Level
+- Trending Recipes
+- Pagination
+
+---
+
+### User Dashboard
+
+- My Recipes
+- My Saved Recipes
+- Recently Viewed Recipes
+- Most Liked Recipes
+- Profile Editing
+
+---
+
+# 📚 Learning Outcomes
+
+This project demonstrates practical experience with:
+
+- Full Stack MERN Development
+- REST API Development
+- MongoDB CRUD Operations
+- JWT Authentication
+- Password Encryption
+- File Uploads
+- API Integration
+- Redux State Management
+- Protected Routes
+- Responsive UI Design
