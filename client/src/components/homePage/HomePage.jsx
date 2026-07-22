@@ -15,6 +15,8 @@ const HomePage = () => {
   // Using useDispatch and useSelector hooks
   const dispatch = useDispatch();
   const { user, savedRecipes, token } = useSelector((state) => state);
+  console.log("Token:", token);
+console.log("User:", user);
 
   // State for recipe detail, random recipes and searched recipes
   const [recipeDetail, setRecipeDetail] = useState(null);
@@ -29,15 +31,15 @@ const HomePage = () => {
   // Function to handle Bookmark click
   const handleBookmarkClick = async (recipeId) => {
     const response = await axios.put(
-      `https://recipe-book-ycpw.onrender.com/users/${user._id}/savedRecipe`,
-      { recipeId },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+  `http://localhost:8080/users/${user._id}/savedRecipe`,
+  { recipeId },
+  {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  }
+);
     const savedRecipesData = response.data;
     if (savedRecipesData) {
       dispatch(
