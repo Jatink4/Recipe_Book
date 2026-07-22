@@ -25,13 +25,14 @@ console.log("User:", user);
 
   // API Key and URLs for Spoonacular API
   const API_KEY = process.env.REACT_APP_RECIPE_APP_API_KEY;
+  const App_API_KEY = process.env.REACT_APP_API_KEY;
   const SEARCH_RECIPE_URL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=12`;
   const RANDOM_RECIPE_URL = `https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}&number=12`;
 
   // Function to handle Bookmark click
   const handleBookmarkClick = async (recipeId) => {
     const response = await axios.put(
-  `https://recipe-book-backend-4oac.onrender.com/users/${user._id}/savedRecipe`,
+  `https://${App_API_KEY}/users/${user._id}/savedRecipe`,
   { recipeId },
   {
     headers: {

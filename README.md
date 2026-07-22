@@ -10,7 +10,8 @@ The application integrates the **Spoonacular API** to fetch thousands of recipes
 
 # 🌐 Live Demo
 
-**Frontend:** https://flavor-verse.netlify.app/
+**client:** https://recipebookjk.netlify.app/
+**server:** on render
 
 ---
 
@@ -169,9 +170,11 @@ Create a `.env` file inside the **client** folder.
 
 ```env
 REACT_APP_RECIPE_APP_API_KEY=YOUR_SPOONACULAR_API_KEY
+REACT_APP_API_KEY=your_render_api
 ```
 
 > Replace `YOUR_SPOONACULAR_API_KEY` with your Spoonacular API key.
+> Replace `your_render_api` with your render API key for loacally runing use localhost:8080 .
 
 Start the frontend
 

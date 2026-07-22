@@ -20,13 +20,14 @@ const ProfilePage = () => {
 
   // Get API key from environment variables
   const API_KEY = process.env.REACT_APP_RECIPE_APP_API_KEY;
+  const App_API_KEY = process.env.REACT_APP_API_KEY;
 
   // Fetch saved recipes and update state and Redux store
   const getSavedRecipes = async () => {
       try{
        // Fetch saved recipes from the backend
       const savedRecipesResponse = await axios.get(
-        `https://recipe-book-backend-4oac.onrender.com/users/${user._id}/savedRecipe`,
+        `https://${App_API_KEY}/users/${user._id}/savedRecipe`,
         {
           headers: {
             "Content-Type": "application/json",

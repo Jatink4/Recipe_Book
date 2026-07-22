@@ -13,6 +13,8 @@ import Input from "../customInput/Input";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+ const App_API_KEY = process.env.REACT_APP_API_KEY;
+
 // Function to show error popup message
 const notifyError = ( message) => {
   toast.error(message, {
@@ -111,7 +113,7 @@ const LoginForm = () => {
       }
       formData.append("picture", values.picture.name);
       const savedUserResponse = await axios.post(
-        "https://recipe-book-backend-4oac.onrender.com/auth/register",
+        `https://${App_API_KEY}/auth/register`,
         formData,
         {
           headers: {
@@ -134,7 +136,7 @@ const LoginForm = () => {
   const login = async (values, onSubmitProps) => {
     try{
     const loggedInResponse = await axios.post(
-      "https://recipe-book-backend-4oac.onrender.com/auth/login",
+      `https://${App_API_KEY}/auth/login`,
       values,
       {
         headers: {

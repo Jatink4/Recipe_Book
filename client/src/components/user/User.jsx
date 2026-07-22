@@ -8,6 +8,8 @@ import "../user/User.scss";
  * @returns {JSX.Element} - The user details component
  */
 
+ const App_API_KEY = process.env.REACT_APP_API_KEY;
+
 const User = ({user}) => {
   return (
     <div className='user-details-container'>
@@ -16,7 +18,7 @@ const User = ({user}) => {
             <span className='user-email-style'>{user.email}</span>
         </div>
         <div>
-            <img  src={`https://recipe-book-backend-4oac.onrender.com/assets/${user.picture}`} alt={user.picture} className='user-image-style' />
+            <img  src={`https://${App_API_KEY}/assets/${user.picture}`} alt={user.picture} className='user-image-style' />
         </div>
     </div>
   )
