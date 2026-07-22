@@ -11,6 +11,7 @@ The application integrates the **Spoonacular API** to fetch thousands of recipes
 # 🌐 Live Demo
 
 **client:** https://recipebookjk.netlify.app/
+
 **server:** on render
 
 ---
@@ -285,77 +286,23 @@ Protected Routes
 
 ```
 User
-
 ↓
-
 Register/Login
-
 ↓
-
 JWT Authentication
-
 ↓
-
 Search Recipes
-
 ↓
-
 Spoonacular API
-
 ↓
-
 Recipe Details
-
 ↓
-
 Save Recipe
-
 ↓
-
 MongoDB
-
 ↓
-
 Profile Page
 ```
-
----
-
-# 📸 Screenshots
-
-## Register Page
-
-<img width="100%" src="screenshots/register.png"/>
-
----
-
-## Login Page
-
-<img width="100%" src="screenshots/login.png"/>
-
----
-
-## Home Page
-
-<img width="100%" src="screenshots/home.png"/>
-
----
-
-## Recipe Detail
-
-<img width="100%" src="screenshots/details.png"/>
-
----
-
-## Ingredients
-
-<img width="100%" src="screenshots/ingredients.png"/>
-
----
-
-## Profile Page
-
-<img width="100%" src="screenshots/profile.png"/>
 
 ---
 
