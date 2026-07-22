@@ -31,7 +31,7 @@ console.log("User:", user);
   // Function to handle Bookmark click
   const handleBookmarkClick = async (recipeId) => {
     const response = await axios.put(
-  `http://localhost:8080/users/${user._id}/savedRecipe`,
+  `https://recipe-book-backend-4oac.onrender.com/users/${user._id}/savedRecipe`,
   { recipeId },
   {
     headers: {
